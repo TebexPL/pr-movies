@@ -1,0 +1,44 @@
+.DetailsContainer {
+  width: 100%;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #2C323C;
+  background-repeat: no-repeat;
+  background-size:cover;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.detailsBox {
+  background-color: rgba(33, 37, 43, 0.8);
+  width: 100%;
+  min-height: 90vh;
+  color: #8B919D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.detailsContent{
+  opacity: 1;
+  background-color: #21252B;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  width: 60%;
+  min-height: 60vh;
+  text-align: center;
+
+}
+
+.detailsContent h1{
+  font-size: 50px;
+
+}
+.detailsContent h3{
+  margin: 30px;
+
+}

@@ -1,0 +1,45 @@
+
+.MovieItem {
+  width: 22.5vw;
+  margin: 10px 5px;
+  aspect-ratio: 0.6;
+  border: 1px solid black;
+  color: #6B717D;
+  background-color: #21252B;
+  font-size: 18px;
+  text-align: center;
+
+  overflow: hidden;
+}
+
+.iconDiv {
+  height: 90%;
+
+}
+
+
+.MovieItem img {
+  height:100%;
+  width:100%;
+}
+
+.MovieItem Link {
+  display: flex;
+  margin: 0;
+  padding: 0;
+}
+
+.MovieItem a {
+  margin: 0;
+  padding: 0;
+  color: #6B717D;
+}
+
+.MovieItem p {
+  width: 100%;
+  padding-bottom:  10px;
+}
+.MovieItem:hover {
+  cursor:pointer;
+  background-color: #2C323C;
+}

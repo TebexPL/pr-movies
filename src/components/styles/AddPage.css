@@ -1,0 +1,78 @@
+
+.addBox {
+  width: 90%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  height:95%;
+  background-color: #21252B;
+  color: #6B717D;
+}
+
+.addForm {
+  height: 80%;
+  flex:2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.addPreview{
+  flex:1;
+}
+
+.addBox input {
+  padding: 10px;
+  width: 80%;
+  height: 10%;
+  background-color: #2C323C;
+  border: none;
+  font-size: 20px;
+  color: #6B717D;
+}
+
+.addForm textarea {
+  padding: 10px;
+  width: 80%;
+  max-width: 80%;
+  height: 30%;
+  background-color: #2C323C;
+  border: none;
+  font-size: 20px;
+  color: #6B717D;
+  resize: none;
+}
+.addBox input:focus {
+  outline: 1px solid #6B717D;
+}
+.addForm textarea:focus {
+  outline: 1px solid #6B717D;
+}
+.addBox button {
+  width: 50%;
+  height: 10%;
+  border: none;
+  background-color: #2C323C;
+  color: #6B717D;
+  border-radius: 5px;
+  font-size: 20px;
+}
+
+.addBox button:hover {
+  cursor:pointer;
+  background-color: #6B717D;
+  color: black;
+}
+
+
+.addContainer {
+  width: 100vw;
+  height:90vh;
+  background-color: #2C323C;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
