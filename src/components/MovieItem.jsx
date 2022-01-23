@@ -21,8 +21,7 @@ function MovieItem(props) {
           <img src='notFound.png' alt=""/>}
         </div>
         <p>
-
-        {data.title.length>20?data.title.substr(0, 20)+'...':data.title}
+        {data.title}
         </p>
     </Link>
     </div>
