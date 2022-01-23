@@ -6,6 +6,7 @@ import "./styles/DetailsPage.css";
 function DetailsPage(props) {
   const [movie, setMovie] = useState({});
   const { id } = useParams();
+  const [updated, setUpdated] = useState(false);
   useEffect( () => {
     const fetchMovie = async () => {
            const res = await fetch("https://pr-movies.herokuapp.com/api/movies/"+id);
@@ -13,17 +14,26 @@ function DetailsPage(props) {
            setMovie(data);
            if(data.image)
             document.getElementById('detailsbox').style.backgroundImage = "url("+data.image+")";
+
+            setUpdated(true);
        }
        fetchMovie();
-
   }, [id])
 
   return (
     <div id="detailsbox" className='DetailsContainer'>
       <div className="detailsBox">
         <div className="detailsContent">
-        <h1>{movie.title?movie.title:"404"}</h1>
-        <h3>{movie.content?movie.content:"This movie doesn't exist"}</h3>
+        {updated?(
+          <>
+          <h1>{movie.title?movie.title:"404"}</h1>
+          <h3>{movie.content?movie.content:"This movie doesn't exist"}</h3>
+          </>
+          )
+
+        :
+        null
+        }
         </div>
       </div>
     </div>

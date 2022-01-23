@@ -16,7 +16,7 @@ function MovieItem(props) {
     <Link to={"/Details/"+data.id}>
         <div className='iconDiv'>
         {data.image && data.image.includes("http")?
-          <img src={data.image} alt="Movie billboard" onError={({ currentTarget }) => imgError(currentTarget)} />
+          <img src={data.image} alt="" onError={({ currentTarget }) => imgError(currentTarget)} />
           :
           <img src='notFound.png' alt="Not found"/>}
         </div>

@@ -66,7 +66,7 @@ function RegisterPage(props) {
         <input id='inputName' placeholder="Name" />
         <input id='inputEmail' placeholder="E-mail" />
         <input id='inputPass' type="password" placeholder="Password" />
-        <button onClick={register}>Register</button>
+        <button onClick={() => register()}>Register</button>
       </div>
     </div>
 

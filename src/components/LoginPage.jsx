@@ -39,7 +39,7 @@ function LoginPage(props) {
         <h3 id='loginBox'>Log in</h3>
         <input id='inputName' placeholder="Name" />
         <input id='inputPass' type="password" placeholder="Password" />
-        <button onClick={login}>Log in</button>
+        <button onClick={() => login()}>Log in</button>
       </div>
     </div>
 
