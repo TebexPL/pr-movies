@@ -24,53 +24,49 @@ function MainPage(props) {
        }
        if(isLoggedIn)
         fetchMovies();
-       else
-        document.getElementsByClassName("movieBox")[0].style.justifyContent = 'center';
   }, [isLoggedIn])
 
 
 
 
-
-  return (
-    <div className="movieBox">
-    {
-      isLoggedIn?(
-        <>
-        <input placeholder="Search for a specific movie"
-        value={search}
-        onChange={(event) =>{
-          setSearch(event.target.value);
-        }} />
-        <div className='MovieContainer'>
-          {
-            search===''?(
-              movies.map((movie, key) => {
-                if(movie.title)
-                  return <MovieItem key={key} data={movie}/>
-                return null;
-              })
-            )
-            :
-            (
-              movies
-              .filter((movie) => {
-                if(movie.title)
-                  return movie.title.toLowerCase().startsWith(search.toLowerCase())
-                return false;
+  if(isLoggedIn)
+    return (
+        <div className="movieBox" style={{justifyContent: 'flex-start'}}>
+          <input placeholder="Search for a specific movie"
+          value={search}
+          onChange={(event) =>{
+            setSearch(event.target.value);
+          }} />
+          <div className='MovieContainer'>
+            {
+              search===''?(
+                movies.map((movie, key) => {
+                  if(movie.title)
+                    return <MovieItem key={key} data={movie}/>
+                  return null;
                 })
-              .map((movie, key) => {
-                if(movie.title )
-                  return <MovieItem key={key} data={movie}/>
-                return null;
-              })
-            )
-          }
+              )
+              :
+              (
+                movies
+                .filter((movie) => {
+                  if(movie.title)
+                    return movie.title.toLowerCase().startsWith(search.toLowerCase())
+                  return false;
+                  })
+                .map((movie, key) => {
+                  if(movie.title )
+                    return <MovieItem key={key} data={movie}/>
+                  return null;
+                })
+              )
+            }
+          </div>
         </div>
-        </>
       )
-      :
-      (
+    else
+      return(
+        <div className="movieBox" style={{justifyContent: 'center'}}>
         <div className="unLoggedContainer">
           <h2>Welcome to the Movies App</h2>
           <div className='unloggedOptions'>
@@ -86,10 +82,8 @@ function MainPage(props) {
             </div>
           </div>
         </div>
+      </div>
       )
-    }
-    </div>
-  );
 }
 
 export default MainPage;

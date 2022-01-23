@@ -13,7 +13,7 @@ function MovieItem(props) {
   return (
 
     <div className='MovieItem'>
-    <Link to={"/Details/"+data.id}>
+    <Link to={data.id?"/Details/"+data.id:"#"}>
         <div className='iconDiv'>
         {data.image && data.image.includes("http")?
           <img src={data.image} alt="" onError={({ currentTarget }) => imgError(currentTarget)} />
