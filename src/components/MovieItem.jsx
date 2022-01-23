@@ -18,7 +18,7 @@ function MovieItem(props) {
         {data.image && data.image.includes("http")?
           <img src={data.image} alt="" onError={({ currentTarget }) => imgError(currentTarget)} />
           :
-          <img src='notFound.png' alt="Not found"/>}
+          <img src='notFound.png' alt=""/>}
         </div>
         <p>
 

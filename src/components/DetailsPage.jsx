@@ -9,13 +9,20 @@ function DetailsPage(props) {
   const [updated, setUpdated] = useState(false);
   useEffect( () => {
     const fetchMovie = async () => {
-           const res = await fetch("https://pr-movies.herokuapp.com/api/movies/"+id);
-           const data = await res.json();
-           setMovie(data);
-           if(data.image)
-            document.getElementById('detailsbox').style.backgroundImage = "url("+data.image+")";
+        try{
+          const res = await fetch("https://pr-movies.herokuapp.com/api/movies/"+id);
+          const data = await res.json();
+          setMovie(data);
+          if(data.image)
+           document.getElementById('detailsbox').style.backgroundImage = "url("+data.image+")";
 
-            setUpdated(true);
+        }
+        catch(error){
+          console.log(error)
+        }
+        finally{
+           setUpdated(true);
+        }
        }
        fetchMovie();
   }, [id])
